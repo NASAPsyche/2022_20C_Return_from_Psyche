@@ -7,6 +7,6 @@ public class StartScript : MonoBehaviour
 {
     public void OnButtonPress()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Background Page");
     }
 }
