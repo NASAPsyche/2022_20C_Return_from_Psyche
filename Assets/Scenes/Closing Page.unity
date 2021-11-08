@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512558737223249980, guid: 8ae27425fdf70f441b8de7db4bbfba01, type: 3}
       propertyPath: m_Text
-      value: You ave collectd all of the parts and left the Pysche asteroid.
+      value: You have collected all of the parts and left the Pysche asteroid.
       objectReference: {fileID: 0}
     - target: {fileID: 5512558737223249980, guid: 8ae27425fdf70f441b8de7db4bbfba01, type: 3}
       propertyPath: m_FontData.m_MinSize

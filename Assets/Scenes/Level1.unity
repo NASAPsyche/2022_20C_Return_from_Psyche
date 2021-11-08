@@ -587,7 +587,7 @@ MonoBehaviour:
   m_JumpForce: 800
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5740,6 +5740,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7129fafee83fe41879bf6a236df72c41, type: 2}
   - m_RefCount: 43
     m_Data: {fileID: 11400000, guid: 02a936b28eac64d5399f3ae89dbe7688, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 66
     m_Data: {fileID: 21300000, guid: 8d1fd66d86765470b8aeba91ec74bca1, type: 3}
@@ -5753,6 +5755,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 1a5a834e59ed349e7aa41c6e3acc704a, type: 3}
   - m_RefCount: 43
     m_Data: {fileID: 21300000, guid: c6b89eab9646a487d9788450f22b2e60, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 408
     m_Data:
@@ -5779,7 +5783,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -44, y: -24, z: 0}
-  m_Size: {x: 90, y: 26, z: 1}
+  m_Size: {x: 98, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
