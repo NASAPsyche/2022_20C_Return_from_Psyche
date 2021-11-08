@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class psycheBGM : MonoBehaviour
 {
-    void Awake() 
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        int numBGM = FindObjectsOfType<psycheBGM>().Length;
+        if (numBGM != 1)
+        {
+            Destroy(this.gameObject);
+        }
+            //more than one BGM
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
-    
 }
