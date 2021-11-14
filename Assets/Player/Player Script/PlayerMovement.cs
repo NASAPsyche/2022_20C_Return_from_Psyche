@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         verticalMove = Input.GetAxisRaw("Vertical");
-        if (verticalMove != 0)
+        if (verticalMove > 0)
             jump = true;
         else
             jump = false; 
