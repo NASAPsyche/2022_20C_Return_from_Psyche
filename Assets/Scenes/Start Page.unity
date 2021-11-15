@@ -302,12 +302,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Get to the end and make sure you collect everything that is needed! But
-    be careful, make sure you don''t take too much damage so you don''t break down!
-
-
-    You
-    can move using WASD on your keyboard to move your character. '
+  m_Text: "Get to the end of the level but make sure you collect everything that
+    is needed! \n\nYou can move using WASD on your keyboard to move your character. "
 --- !u!222 &489685945
 CanvasRenderer:
   m_ObjectHideFlags: 0
