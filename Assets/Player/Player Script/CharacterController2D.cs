@@ -62,6 +62,11 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    public bool getGround()
+    {
+        return m_Grounded;
+    }
+
 
     public void Move(float move, bool crouch, bool jump)
     {
