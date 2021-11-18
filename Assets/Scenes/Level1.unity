@@ -979,7 +979,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 262656289}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4c9b0959a58e0aa4591cebb1f87d1db5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8203,6 +8203,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 931f92e57078c3a4ca3426e447bd589d, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 40f96bbb3fe47df489ff8d121856d8bd, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 155
     m_Data: {fileID: -5269516341577255621, guid: 1a9177653320f4d4db61e93ee68ff9fd, type: 3}
@@ -8218,6 +8220,8 @@ Tilemap:
     m_Data: {fileID: 3492155084477221816, guid: 1a9177653320f4d4db61e93ee68ff9fd, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1845211837565423005, guid: 1a9177653320f4d4db61e93ee68ff9fd, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 506
     m_Data:
