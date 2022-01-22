@@ -32,10 +32,11 @@ public class PlayerMovement : MonoBehaviour
             jump = false;
 
 
+
         //animation parameters
         anim.SetBool("run", controller.getGround() == true && horizontalMove != 0);
         anim.SetBool("jumpAnimation", controller.getGround() == false);
-        anim.SetBool("ground", controller.getGround() && horizontalMove != 0);
+        anim.SetBool("ground", controller.getGround() == true);
     }
 
     void FixedUpdate()
