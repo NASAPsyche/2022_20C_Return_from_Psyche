@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump;
-    float verticalMove = 0f;
 
     void Awake()
     {
