@@ -17,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     private bool canDoubleJump = false; // Whether or not the player can double jump
+    private bool hasJetpack = false;    // Whether or not the player has collected the jetpack
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -60,6 +61,15 @@ public class CharacterController2D : MonoBehaviour
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //upon colliding with an object, check if the object was the jetpack. If it is, give the player the jetpack
+        if(collision.collider.name == "jetpack")
+        {
+            hasJetpack = true;
         }
     }
 
@@ -143,7 +153,7 @@ public class CharacterController2D : MonoBehaviour
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoubleJump = true; //allow the player to double jump while still in the air
             }
-            else if(canDoubleJump)
+            else if(canDoubleJump && hasJetpack)
             {
                 m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0f);
                 // Add a vertical force to the player.
