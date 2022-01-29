@@ -25,13 +25,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        verticalMove = Input.GetAxisRaw("Vertical");
-        if (verticalMove > 0)
+        if (Input.GetKeyDown(KeyCode.Space) == true || Input.GetKeyDown(KeyCode.UpArrow) == true)
             jump = true;
-        else
-            jump = false;
-
-
 
         //animation parameters
         anim.SetBool("run", controller.getGround() == true && horizontalMove != 0);
@@ -43,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Move the character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
         
     }
 
