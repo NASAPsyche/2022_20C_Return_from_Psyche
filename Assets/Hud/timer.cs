@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class timer : MonoBehaviour
 {
-    bool stopwatchActive = false;
-    float currentTime;
+    static bool stopwatchActive = true;
+    static float currentTime;
     public Text currentTimetext;
+    private String sceneName;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = 0;
+        sceneName = SceneManager.GetActiveScene().name;
+        if(sceneName == "Level1")
+        {
+            currentTime = 0;
+        }
     }
 
     // Update is called once per frame
