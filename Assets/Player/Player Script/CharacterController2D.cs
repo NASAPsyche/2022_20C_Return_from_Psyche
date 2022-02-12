@@ -13,7 +13,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-
+    [SerializeField] private float slipVel;
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     private bool canDoubleJump = false; // Whether or not the player can double jump
@@ -72,7 +72,13 @@ public class CharacterController2D : MonoBehaviour
             hasJetpack = true;
         }
     }
-
+    private void OnCollisionStay2D(Collision2D other) 
+    {
+        if(other.collider.name == "Oil_Spill" && Mathf.Abs(m_Rigidbody2D.velocity.x) >= 0.1)
+        {
+            m_Rigidbody2D.AddForce(new Vector2(slipVel*Mathf.Sign(m_Rigidbody2D.velocity.x), 0f));
+        }    
+    }
     public bool getGround()
     {
         return m_Grounded;
