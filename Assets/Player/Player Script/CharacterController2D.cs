@@ -34,6 +34,10 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    private bool canClimb = false;
+    const float m_ClimbSpeed = 1f;
+    private float defaultGravity; 
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -43,6 +47,8 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+
+        defaultGravity = m_Rigidbody2D.gravityScale;
     }
 
     private void FixedUpdate()
@@ -72,13 +78,35 @@ public class CharacterController2D : MonoBehaviour
             hasJetpack = true;
         }
     }
+
     private void OnCollisionStay2D(Collision2D other) 
     {
         if(other.collider.name == "Oil_Spill" && Mathf.Abs(m_Rigidbody2D.velocity.x) >= 0.1)
         {
             m_Rigidbody2D.AddForce(new Vector2(slipVel*Mathf.Sign(m_Rigidbody2D.velocity.x), 0f));
+        }
+
+        if(other.collider.name == "Climbing_Wall")
+        {
+            canClimb = true;
+           
+            Debug.Log("Can climb");
+        }
+        else
+        {
+            canClimb = false;
         }    
     }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.collider.name == "Climbing_Wall")
+        {
+            canClimb = false;
+        }
+    }
+
+
     public bool getGround()
     {
         return m_Grounded;
@@ -167,6 +195,16 @@ public class CharacterController2D : MonoBehaviour
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoubleJump = false; //do not allow the player to jump again after double jumping
             }
+        }
+
+        if(canClimb && (move != 0))
+        {
+            m_Rigidbody2D.gravityScale = 0f;
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_ClimbSpeed));
+        }
+        else
+        {
+            m_Rigidbody2D.gravityScale = defaultGravity;
         }
     }
 
