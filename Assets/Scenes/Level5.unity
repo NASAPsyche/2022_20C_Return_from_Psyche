@@ -975,7 +975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Watch out for loose rock! \nThese platforms will dissapear after you step
+  m_text: "Watch out for loose rock! \nThese platforms will disappear after you step
     on them"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1105,7 +1105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.7, y: 14}
+  m_AnchoredPosition: {x: 4.6, y: 10.3}
   m_SizeDelta: {x: 9.182, y: 4.5741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &779422885
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 800
   m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
+  m_MovementSmoothing: 0.25
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
