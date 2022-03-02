@@ -18,7 +18,12 @@ public class timer : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
         if(sceneName == "Level1")
         {
+            StartStopwatch();
             currentTime = 0;
+        }
+        else if(sceneName == "Closing Page")
+        {
+            StopStopwatch();
         }
     }
 
@@ -30,7 +35,9 @@ public class timer : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimetext.text = time.ToString(@"mm\:ss\:fff");
+        currentTimetext.text = time.ToString(@"mm\:ss");
+        
+        
     }
 
     public void StartStopwatch()
