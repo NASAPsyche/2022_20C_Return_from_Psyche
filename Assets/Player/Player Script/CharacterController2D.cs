@@ -22,6 +22,7 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
+    private string sceneName; 
 
     [Header("Events")]
     [Space]
@@ -35,8 +36,10 @@ public class CharacterController2D : MonoBehaviour
     private bool m_wasCrouching = false;
 
     private bool canClimb = false;
-    const float m_ClimbSpeed = 1f;
-    private float defaultGravity; 
+    const float m_ClimbSpeed = 10f;
+    private float defaultGravity;
+
+     
 
     private void Awake()
     {
@@ -96,6 +99,21 @@ public class CharacterController2D : MonoBehaviour
         {
             canClimb = false;
         }    
+
+        if((other.collider.name == "Scene_Transition") && (Input.GetKeyDown(KeyCode.E)))
+        {
+            sceneName = SceneManager.GetActiveScene().name;
+            if(sceneName == "Level1")
+                SceneManager.LoadScene("Level2");
+            if(sceneName == "Level2")
+                SceneManager.LoadScene("Level3");
+            if(sceneName == "Level3")
+                SceneManager.LoadScene("Level4");
+            if(sceneName == "Level4")
+                SceneManager.LoadScene("Level5");
+            if(sceneName == "Level5")
+                SceneManager.LoadScene("Closing Page");
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -200,7 +218,7 @@ public class CharacterController2D : MonoBehaviour
         if(canClimb && (move != 0))
         {
             m_Rigidbody2D.gravityScale = 0f;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_ClimbSpeed));
+            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_ClimbSpeed);
         }
         else
         {
