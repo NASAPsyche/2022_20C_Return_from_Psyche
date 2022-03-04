@@ -552,6 +552,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9764706
+      objectReference: {fileID: 0}
     - target: {fileID: 4878983558950164440, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
       propertyPath: m_Name
       value: Exit Button
@@ -653,6 +665,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 243162068}
     m_Modifications:
+    - target: {fileID: 2582603962058809505, guid: c660ddb68cf02844fbdc4f8fbd0d94f1, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582603962058809505, guid: c660ddb68cf02844fbdc4f8fbd0d94f1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582603962058809505, guid: c660ddb68cf02844fbdc4f8fbd0d94f1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9764706
+      objectReference: {fileID: 0}
     - target: {fileID: 2582603962058809508, guid: c660ddb68cf02844fbdc4f8fbd0d94f1, type: 3}
       propertyPath: m_Name
       value: Play Button

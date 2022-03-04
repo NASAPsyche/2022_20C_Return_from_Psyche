@@ -52,6 +52,13 @@ public class CharacterController2D : MonoBehaviour
             OnCrouchEvent = new BoolEvent();
 
         defaultGravity = m_Rigidbody2D.gravityScale;
+
+        //make jetpack item carry over scenes
+        sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "Level3" || sceneName == "Level4" || sceneName == "Level5")
+        {
+            hasJetpack = true;
+        }
     }
 
     private void FixedUpdate()
@@ -100,7 +107,7 @@ public class CharacterController2D : MonoBehaviour
             canClimb = false;
         }    
 
-        if((other.collider.name == "Scene_Transition") && (Input.GetKeyDown(KeyCode.E)))
+        if((other.collider.name == "Scene_Transition") && (Input.GetKey(KeyCode.E)))
         {
             sceneName = SceneManager.GetActiveScene().name;
             if(sceneName == "Level1")
