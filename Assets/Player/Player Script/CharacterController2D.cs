@@ -18,6 +18,7 @@ public class CharacterController2D : MonoBehaviour
     private bool m_Grounded;            // Whether or not the player is grounded.
     private bool canDoubleJump = false; // Whether or not the player can double jump
     private bool hasJetpack = false;    // Whether or not the player has collected the jetpack
+    private bool hasClimbingGear = false; //Whether or not the player has collected the climbing gear 
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -53,11 +54,15 @@ public class CharacterController2D : MonoBehaviour
 
         defaultGravity = m_Rigidbody2D.gravityScale;
 
-        //make jetpack item carry over scenes
+        //make jetpack item and climbing gear item carry over scenes
         sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == "Level3" || sceneName == "Level4" || sceneName == "Level5")
         {
             hasJetpack = true;
+        }
+        if (sceneName == "Level5")
+        {
+            hasClimbingGear = true;
         }
     }
 
@@ -82,10 +87,14 @@ public class CharacterController2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //upon colliding with an object, check if the object was the jetpack. If it is, give the player the jetpack
+        //upon colliding with an object, check if the object was one of the gimmick items. If it is, give the player the gimmick item
         if(collision.collider.name == "jetpack")
         {
             hasJetpack = true;
+        }
+        if (collision.collider.name == "backpack")
+        {
+            hasClimbingGear = true;
         }
     }
 
@@ -96,7 +105,7 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.AddForce(new Vector2(slipVel*Mathf.Sign(m_Rigidbody2D.velocity.x), 0f));
         }
 
-        if(other.collider.name == "Climbing_Wall")
+        if(other.collider.name == "Climbing_Wall" && hasClimbingGear == true)
         {
             canClimb = true;
            
