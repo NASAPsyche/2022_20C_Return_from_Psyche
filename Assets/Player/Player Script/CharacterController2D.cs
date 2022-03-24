@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -40,7 +41,7 @@ public class CharacterController2D : MonoBehaviour
     const float m_ClimbSpeed = 10f;
     private float defaultGravity;
 
-     
+    public HudController hudControl;
 
     private void Awake()
     {
@@ -121,15 +122,30 @@ public class CharacterController2D : MonoBehaviour
         {
             sceneName = SceneManager.GetActiveScene().name;
             if(sceneName == "Level1")
+            {
+                hudControl.FadeInOrOut();
                 SceneManager.LoadScene("Level2");
+            }
             if(sceneName == "Level2")
+            {
+                hudControl.FadeInOrOut();
                 SceneManager.LoadScene("Level3");
+            }
             if(sceneName == "Level3")
+            {
+                hudControl.FadeInOrOut();
                 SceneManager.LoadScene("Level4");
+            }
             if(sceneName == "Level4")
+            {
+                hudControl.FadeInOrOut();
                 SceneManager.LoadScene("Level5");
+            }
             if(sceneName == "Level5")
+            {
+                hudControl.FadeInOrOut();
                 SceneManager.LoadScene("Closing Page");
+            }
         }
     }
 
