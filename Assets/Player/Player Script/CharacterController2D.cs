@@ -116,6 +116,7 @@ public class CharacterController2D : MonoBehaviour
             canClimb = false;
         }    
 
+        // Upon colliding with the Sample object and pressing the 'e' key, the player will transition to the next scene
         if((other.collider.name == "Scene_Transition") && (Input.GetKey(KeyCode.E)))
         {
             sceneName = SceneManager.GetActiveScene().name;
