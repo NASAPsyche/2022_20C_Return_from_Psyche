@@ -35,7 +35,7 @@ public class timer : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimetext.text = time.ToString(@"mm\:ss");
+        currentTimetext.text = time.ToString(@"mm\:ss\:ff");
         
         
     }
