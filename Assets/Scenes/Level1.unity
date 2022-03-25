@@ -558,6 +558,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 810242043382567971, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9764706
+      objectReference: {fileID: 0}
     - target: {fileID: 4878983558950164440, guid: 946c1a9fc6540da42babecf9f848083d, type: 3}
       propertyPath: m_Name
       value: Exit Button
@@ -86214,6 +86226,18 @@ PrefabInstance:
     - target: {fileID: 5519626449328015537, guid: a5c6072ccb3ff2441b464b028b5d9309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519626449328015539, guid: a5c6072ccb3ff2441b464b028b5d9309, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519626449328015539, guid: a5c6072ccb3ff2441b464b028b5d9309, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519626449328015539, guid: a5c6072ccb3ff2441b464b028b5d9309, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9764706
       objectReference: {fileID: 0}
     - target: {fileID: 5519626449328015542, guid: a5c6072ccb3ff2441b464b028b5d9309, type: 3}
       propertyPath: m_Name
