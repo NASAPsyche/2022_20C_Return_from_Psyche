@@ -46,11 +46,11 @@ public class HudController : MonoBehaviour
         {
             while(blackOutSquare.GetComponent<Image>().color.a < 1)
             {
-                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+                fadeAmount = objectColor.a + (((float)fadeSpeed/2) * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 blackOutSquare.GetComponent<Image>().color = objectColor;
-                //yield return null;
+                yield return null;
             }
         }
         else
