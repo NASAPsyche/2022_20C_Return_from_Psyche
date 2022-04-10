@@ -59,4 +59,16 @@ public class PlayerPosition : MonoBehaviour
             }      
         }
     }
+
+    public void reset()
+    {
+        if(checkPointReached == false)
+        {
+            player.transform.position = initialPosition;
+        }
+        else
+        {
+            player.transform.position = checkpoint.transform.position;
+        }   
+    }
 }
