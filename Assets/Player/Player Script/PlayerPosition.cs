@@ -20,7 +20,7 @@ public class PlayerPosition : MonoBehaviour
         player = GameObject.Find("Player");
         
         //look for checkpoint if current level is level5
-        if(SceneManager.GetActiveScene().name == "Level5")
+        if(SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level3")
         {
             checkpoint = GameObject.Find("Checkpoint");
             checkpointPositionX = checkpoint.transform.position.x;
@@ -35,12 +35,12 @@ public class PlayerPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level5" && checkPointReached == false)
+        if ((SceneManager.GetActiveScene().name == "Level5" || SceneManager.GetActiveScene().name == "Level3") && checkPointReached == false)
         {
             //check if player has reached checkpoint
             playerPositionX = player.transform.position.x;
             playerPositionY = player.transform.position.y;
-            if (System.Math.Abs(playerPositionX - checkpointPositionX) < 50 && System.Math.Abs(playerPositionY - checkpointPositionY) < 50)
+            if (System.Math.Abs(playerPositionX - checkpointPositionX) < 10 && System.Math.Abs(playerPositionY - checkpointPositionY) < 50)
             {
                 checkPointReached = true;
             }
