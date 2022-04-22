@@ -10,10 +10,8 @@ public class HudController : MonoBehaviour
     public GameObject blackOutSquare;
     public Text sampleNum;
     private String sceneName;
-
-     
-
-    // Start is called before the first frame update
+ 
+    // Sets sample number based on scene and starts fading in from black
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
@@ -32,11 +30,13 @@ public class HudController : MonoBehaviour
         StartCoroutine(FadeBlackOutSquare(false, fadespeed));
     }
 
+    // Used to start coroutine from outside of the script
     public void FadeInOrOut(bool fadeToBlack = true)
     {
         StartCoroutine(FadeBlackOutSquare(fadeToBlack));
     }
 
+    // Fades into or out of black based on parameters
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 1)
     {
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
@@ -44,6 +44,7 @@ public class HudController : MonoBehaviour
 
         if(fadeToBlack)
         {
+            // Fades into black
             while(blackOutSquare.GetComponent<Image>().color.a < 1)
             {
                 fadeAmount = objectColor.a + (((float)fadeSpeed/2) * Time.deltaTime);
@@ -55,6 +56,7 @@ public class HudController : MonoBehaviour
         }
         else
         {
+            // Fades out of black
             while(blackOutSquare.GetComponent<Image>().color.a > 0)
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);

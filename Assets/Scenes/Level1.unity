@@ -1922,6 +1922,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: reset
       objectReference: {fileID: 0}
+    - target: {fileID: 3079879949332614897, guid: 0d94b053d2b86284b8c503f47617c040, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d94b053d2b86284b8c503f47617c040, type: 3}
 --- !u!224 &981869422 stripped
@@ -85678,10 +85682,10 @@ RectTransform:
   m_Father: {fileID: 650111536}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -599.52, y: 321.1502}
-  m_SizeDelta: {x: -1199.0392, y: -641.69965}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40.47998, y: -38.849792}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770715005
 MonoBehaviour:
