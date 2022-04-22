@@ -12,7 +12,7 @@ public class timer : MonoBehaviour
     public Text currentTimetext;
     private String sceneName;
 
-    // Start is called before the first frame update
+    // Sets stopwatch to 0 when starting level 1 and stops the stopwatch when starting the closing page
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
@@ -27,7 +27,7 @@ public class timer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    // Updates and displays the stopwatch
     void Update()
     {
         if(stopwatchActive == true)
@@ -36,15 +36,15 @@ public class timer : MonoBehaviour
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimetext.text = time.ToString(@"mm\:ss\:ff");
-        
-        
     }
 
+    // Starts the stopwatch
     public void StartStopwatch()
     {
         stopwatchActive = true;
     }
 
+    // Stops the stopwatch
     public void StopStopwatch()
     {
         stopwatchActive = false;

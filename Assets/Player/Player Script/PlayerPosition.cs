@@ -60,6 +60,7 @@ public class PlayerPosition : MonoBehaviour
         }
     }
 
+    //When called, reset player to checkpoint or initial position
     public void reset()
     {
         if(checkPointReached == false)

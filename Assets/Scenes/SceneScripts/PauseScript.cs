@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenuUI;
 
-    // Update is called once per frame
+    //Check for the escape key being pressed, if so change the pause state
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -21,6 +19,7 @@ public class PauseScript : MonoBehaviour
         }
     }
 
+    //Pause menu Ui is deactivated and time is unpaused
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -28,12 +27,11 @@ public class PauseScript : MonoBehaviour
         GameIsPaused = false;
     }
 
+    //Pause menu UI is set to active and time is paused
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
-
-
 }

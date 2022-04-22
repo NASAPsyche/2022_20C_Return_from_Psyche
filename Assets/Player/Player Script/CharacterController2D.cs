@@ -38,10 +38,10 @@ public class CharacterController2D : MonoBehaviour
     private bool m_wasCrouching = false;
 
     private bool canClimb = false;
-    const float m_ClimbSpeed = 10f;
-    private float defaultGravity;
+    const float m_ClimbSpeed = 10f; // Player climbing speed
+    private float defaultGravity;   
 
-    public HudController hudControl;
+    public HudController hudControl; //Used to call fade to black transitions
 
     private void Awake()
     {
@@ -106,11 +106,10 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.AddForce(new Vector2(slipVel*Mathf.Sign(m_Rigidbody2D.velocity.x), 0f));
         }
 
+        // Upon colliding with a climbing wall object and having picked up climbing gear, the player s able to climb
         if(other.collider.name == "Climbing_Wall" && hasClimbingGear == true)
         {
             canClimb = true;
-           
-            Debug.Log("Can climb");
         }
         else
         {
@@ -248,13 +247,16 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
+        // Allows the player to climb when moving towards and colliding with a climbing wall
         if(canClimb && (move != 0))
         {
+            // Sets gravity to 0 and creates a new constant velocity
             m_Rigidbody2D.gravityScale = 0f;
             m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_ClimbSpeed);
         }
         else
         {
+            // Resets gravity to defualt
             m_Rigidbody2D.gravityScale = defaultGravity;
         }
     }
